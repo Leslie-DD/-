@@ -55,7 +55,9 @@ def writeInLast(username,password):
     data = f.write("密码：%s\n"%password)
 #writeInLast("丁亦凡", "345")
 
-def isRegisterCorrect(username, secret, repeat, phonenumber, code, producedCode):
+# def isRegisterCorrect(username, secret, repeat, phonenumber, code, producedCode):
+
+def isRegisterCorrect(username, secret, repeat, phonenumber):
     returnString = ""
     returnNumber = 0
     '''判断手机号格式是否符合要求'''
@@ -72,14 +74,14 @@ def isRegisterCorrect(username, secret, repeat, phonenumber, code, producedCode)
         returnString = "手机号码格式不正确！"
         return returnString, returnNumber
     '''判断验证码是否正确'''
-    isCodeCorrect = 1
-    if code == "":
-        returnString = "请发送验证码并输入！"
-        return returnString, returnNumber
-    if code != producedCode:
-        isCodeCorrect = 0
-        returnString = "验证码输入不正确！"
-        return returnString, returnNumber
+    # isCodeCorrect = 1
+    # if code == "":
+    #     returnString = "请发送验证码并输入！"
+    #     return returnString, returnNumber
+    # if code != producedCode:
+    #     isCodeCorrect = 0
+    #     returnString = "验证码输入不正确！"
+    #     return returnString, returnNumber
     '''判断用户名是否已经存在'''
     if username == "":
         returnString = "请输入用户名！"

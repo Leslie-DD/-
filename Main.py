@@ -1,3 +1,4 @@
+import os
 import sys
 if hasattr(sys, 'frozen'):
     os.environ['PATH'] = sys._MEIPASS + ";" + os.environ['PATH']
@@ -80,36 +81,31 @@ class Register(QWidget, Ui_registerForm):
         super(Register, self).__init__()
         self.setupUi(self)
         self.setWindowIcon(QIcon('./dog.png'))
-        #self.backButton.clicked.connect(self.backtoLogin)
-        #self.registerButton.clicked.connect(self.registerSuccess)
-        #self.sendCodeButton.clicked.connect(self.sendCode)
-        #self.codeEdit.textChanged['QString'].connect(registerForm.codeChanged)
-        #self.numberEdit.textChanged['QString'].connect(registerForm.phoneChanged)
-        self.code = ""  # 验证码
-        self.isSentcode = 0
+        # self.code = ""  # 验证码
+        # self.isSentcode = 0
         self.usernameEdit.setEnabled(False)
         self.passwordEdit.setEnabled(False)
         self.confirmEdit.setEnabled(False)
     def phoneChanged(self):
         _translate = QtCore.QCoreApplication.translate
-        self.sendCodeButton.setEnabled(True)
-        self.codeEdit.setEnabled(True)
-        self.usernameEdit.setEnabled(False)
-        self.passwordEdit.setEnabled(False)
-        self.confirmEdit.setEnabled(False)
-        self.sendCodeButton.setText(_translate("tipForm", "发送验证码"))
-    def codeChanged(self):
-        _translate = QtCore.QCoreApplication.translate
-        if self.code != "" and self.code == self.codeEdit.text():
-            self.sendCodeButton.setText(_translate("tipForm", "输入正确！"))
-            self.sendCodeButton.setEnabled(False)
-            self.codeEdit.setEnabled(False)
-            self.usernameEdit.setEnabled(True)
-            self.passwordEdit.setEnabled(True)
-            self.confirmEdit.setEnabled(True)
-        else :
-            self.sendCodeButton.setText(_translate("tipForm", "请输入正确的验证码！"))
-            self.sendCodeButton.setEnabled(False)
+        # self.sendCodeButton.setEnabled(True)
+        # self.codeEdit.setEnabled(True)
+        self.usernameEdit.setEnabled(True)
+        self.passwordEdit.setEnabled(True)
+        self.confirmEdit.setEnabled(True)
+        # self.sendCodeButton.setText(_translate("tipForm", "发送验证码"))
+    # def codeChanged(self):
+    #     _translate = QtCore.QCoreApplication.translate
+    #     if self.code != "" and self.code == self.codeEdit.text():
+    #         self.sendCodeButton.setText(_translate("tipForm", "输入正确！"))
+    #         self.sendCodeButton.setEnabled(False)
+    #         self.codeEdit.setEnabled(False)
+    #         self.usernameEdit.setEnabled(True)
+    #         self.passwordEdit.setEnabled(True)
+    #         self.confirmEdit.setEnabled(True)
+    #     else :
+    #         self.sendCodeButton.setText(_translate("tipForm", "请输入正确的验证码！"))
+    #         self.sendCodeButton.setEnabled(False)
     '''返回button信号槽，返回登陆界面
     '''
     def backtoLogin(self):
@@ -118,32 +114,39 @@ class Register(QWidget, Ui_registerForm):
         self.child.show()
     '''发送验证码button信号槽
     '''
-    def sendCode(self):
-        _translate = QtCore.QCoreApplication.translate
-        self.sendCodeButton.setText(_translate("tipForm", "请输入正确的验证码！"))
-        self.sendCodeButton.setEnabled(False)
-        # 判断是否发送的标志
-        self.string, self.number = isregistercorrect.isSendOK(self.numberEdit.text())
-        # 电话号码格式正确，符合发送条件，发送
-        if self.string == "" and self.number == 1:
-            self.code = isregistercorrect.sendCode(self.numberEdit.text())
-            self.reg = Tip()
-            self.reg.setWindowTitle(_translate("tipForm", "Congratulations!"))
-            self.reg.contentLabel.setText(_translate("tipForm", "发送成功！"))
-            self.reg.show()
-            #self.isSentcode = 1
-        # 电话号码格式错误，提示并且不发送
-        elif self.string != "" and self.number == 0:
-            self.reg = Tip()
-            self.reg.setWindowTitle(_translate("tipForm", "WARNING!"))
-            self.reg.contentLabel.setText(_translate("tipForm", self.string))
-            self.reg.show()
+    # def sendCode(self):
+    #     _translate = QtCore.QCoreApplication.translate
+    #     self.sendCodeButton.setText(_translate("tipForm", "请输入正确的验证码！"))
+    #     self.sendCodeButton.setEnabled(False)
+    #     # 判断是否发送的标志
+    #     self.string, self.number = isregistercorrect.isSendOK(self.numberEdit.text())
+    #     # 电话号码格式正确，符合发送条件，发送
+    #     if self.string == "" and self.number == 1:
+    #         self.code = isregistercorrect.sendCode(self.numberEdit.text())
+    #         self.reg = Tip()
+    #         self.reg.setWindowTitle(_translate("tipForm", "Congratulations!"))
+    #         self.reg.contentLabel.setText(_translate("tipForm", "发送成功！"))
+    #         self.reg.show()
+    #         #self.isSentcode = 1
+    #     # 电话号码格式错误，提示并且不发送
+    #     elif self.string != "" and self.number == 0:
+    #         self.reg = Tip()
+    #         self.reg.setWindowTitle(_translate("tipForm", "WARNING!"))
+    #         self.reg.contentLabel.setText(_translate("tipForm", self.string))
+    #         self.reg.show()
     '''注册button信号槽
     '''
     def registerSuccess(self):
         _translate = QtCore.QCoreApplication.translate
         # 判断是否满足注册条件的标志
-        self.String, self.Number = isregistercorrect.isRegisterCorrect(self.usernameEdit.text(),self.passwordEdit.text(), self.confirmEdit.text(), self.numberEdit.text(), self.codeEdit.text(), self.code)
+        self.String, self.Number = isregistercorrect.isRegisterCorrect(
+            self.usernameEdit.text(),
+            self.passwordEdit.text(),
+            self.confirmEdit.text(),
+            self.numberEdit.text(),
+            # self.codeEdit.text(),
+            # self.code
+        )
         # 满足注册条件
         if self.String == "" and self.Number == 1:
             database.insertDb(self.usernameEdit.text(), self.passwordEdit.text())
