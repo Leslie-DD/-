@@ -1,0 +1,18 @@
+<RCC>
+  <qresource prefix="login">
+    <file>login_400_250.png</file>
+  </qresource>
+  <qresource prefix="tip">
+    <file>tip.png</file>
+  </qresource>
+  <qresource prefix="main">
+    <file>main.png</file>
+    <file>main_650_400.png</file>
+  </qresource>
+  <qresource prefix="button">
+    <file>button.png</file>
+  </qresource>
+  <qresource prefix="register">
+    <file>login_650_400.png</file>
+  </qresource>
+</RCC>

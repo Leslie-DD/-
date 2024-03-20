@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>setquestionForm</class>
+ <widget class="QMainWindow" name="setquestionForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>650</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>650</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>仿宋</family>
+    <pointsize>18</pointsize>
+   </font>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>题题会</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="submitButton">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>20</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/button/button.png);</string>
+    </property>
+    <property name="text">
+     <string>提交</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="beforeQuesButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>350</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16000000</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/button/button.png);</string>
+    </property>
+    <property name="text">
+     <string>☚上一题</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="quitLoginButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/button/button.png);</string>
+    </property>
+    <property name="text">
+     <string>退出登录</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="setQuesButton">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>20</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/button/button.png);</string>
+    </property>
+    <property name="text">
+     <string>重新出题</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nextQuesButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>350</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16000000</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/button/button.png);</string>
+    </property>
+    <property name="text">
+     <string>下一题☛</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="changeSecretButton">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>20</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/button/button.png);</string>
+    </property>
+    <property name="text">
+     <string>修改密码</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="quesNoLabel">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>63</y>
+      <width>120</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>18</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+      <strikeout>false</strikeout>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>第 X 题</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="quesLabel">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>125</y>
+      <width>650</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>题目1234</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DLabel">
+    <property name="geometry">
+     <rect>
+      <x>227</x>
+      <y>307</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>D</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ALabel">
+    <property name="geometry">
+     <rect>
+      <x>227</x>
+      <y>187</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>A </string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="DRadio">
+    <property name="geometry">
+     <rect>
+      <x>267</x>
+      <y>307</y>
+      <width>200</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="BRadio">
+    <property name="geometry">
+     <rect>
+      <x>267</x>
+      <y>227</y>
+      <width>200</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="ARadio">
+    <property name="geometry">
+     <rect>
+      <x>267</x>
+      <y>187</y>
+      <width>200</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CLabel">
+    <property name="geometry">
+     <rect>
+      <x>227</x>
+      <y>267</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>C</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="BLabel">
+    <property name="geometry">
+     <rect>
+      <x>227</x>
+      <y>227</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>B </string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="CRadio">
+    <property name="geometry">
+     <rect>
+      <x>267</x>
+      <y>267</y>
+      <width>200</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>650</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/main/main_650_400.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>submitButton</zorder>
+   <zorder>beforeQuesButton</zorder>
+   <zorder>quitLoginButton</zorder>
+   <zorder>setQuesButton</zorder>
+   <zorder>nextQuesButton</zorder>
+   <zorder>changeSecretButton</zorder>
+   <zorder>quesLabel</zorder>
+   <zorder>DLabel</zorder>
+   <zorder>ALabel</zorder>
+   <zorder>DRadio</zorder>
+   <zorder>BRadio</zorder>
+   <zorder>ARadio</zorder>
+   <zorder>CLabel</zorder>
+   <zorder>BLabel</zorder>
+   <zorder>CRadio</zorder>
+   <zorder>quesNoLabel</zorder>
+  </widget>
+ </widget>
+ <resources>
+  <include location="back.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>quitLoginButton</sender>
+   <signal>clicked()</signal>
+   <receiver>setquestionForm</receiver>
+   <slot>quitToLogin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>18</x>
+     <y>31</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>setQuesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>setquestionForm</receiver>
+   <slot>quitToChoice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>205</x>
+     <y>27</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>changeSecretButton</sender>
+   <signal>clicked()</signal>
+   <receiver>setquestionForm</receiver>
+   <slot>changeSecret()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>439</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>488</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>submitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>setquestionForm</receiver>
+   <slot>submitNow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>571</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>609</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>beforeQuesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>setquestionForm</receiver>
+   <slot>beforQues()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>415</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>137</x>
+     <y>440</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nextQuesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>setquestionForm</receiver>
+   <slot>nextQues()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>509</x>
+     <y>413</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>543</x>
+     <y>447</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ARadio</sender>
+   <signal>clicked()</signal>
+   <receiver>setquestionForm</receiver>
+   <slot>ifisChecked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>228</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>596</x>
+     <y>229</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BRadio</sender>
+   <signal>clicked()</signal>
+   <receiver>setquestionForm</receiver>
+   <slot>ifisChecked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>530</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>604</x>
+     <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CRadio</sender>
+   <signal>clicked()</signal>
+   <receiver>setquestionForm</receiver>
+   <slot>ifisChecked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>512</x>
+     <y>283</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>291</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DRadio</sender>
+   <signal>clicked()</signal>
+   <receiver>setquestionForm</receiver>
+   <slot>ifisChecked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>464</x>
+     <y>313</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>590</x>
+     <y>336</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>quitToLogin()</slot>
+  <slot>quitToChoice()</slot>
+  <slot>changeSecret()</slot>
+  <slot>submitNow()</slot>
+  <slot>beforQues()</slot>
+  <slot>nextQues()</slot>
+  <slot>ifisChecked()</slot>
+ </slots>
+</ui>
